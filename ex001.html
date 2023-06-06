@@ -10,16 +10,90 @@
     body {
         background-color: aquamarine;
         color: blue;
-        font: normal 20pt arial;
+        font: normal 1em arial;
     }
 </style>
 <body>
     <h1>Olá mundo!</h1>
     <p>Fundo para o JavaScript</p>
     <script>
-        window.alert('Minha primeira mensagem')
         window.confirm('Está  gostando de JS?')
-        window.prompt('Qual é seu nome?')
+
+        var nome = window.prompt('Qual é seu nome?')
+        window.alert('É um grande prazer te conhecer ' + nome + '!')
+        document.write(`Olá <strong>${nome}</strong>, seu nome tem ${nome.length} letras.<br/>`)
+        document.write(`E em letras maiúscula, ${nome.toLocaleUpperCase()}, tambem tem!<br/>`)
+        document.write(` Em letra minusculas ${nome.toLocaleLowerCase()}, idem.`)
+
+        var n1 = Number.parseInt(window.prompt('Digite um numero'))
+        var n2 = parseInt(window.prompt('Digite outro numero'))
+        var soma = n1 + n2
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${soma}`)
+
+        /* 
+        --O window.prompt retorna uma 'string', e para realizar uma conta precisamos de um 'Number', então para conversão do type da var utilizamos o 'Number.parseInt' = numeros inteiros e 'Number.parseFloat' = numeros reais. Se colocarmos apenas 'Number' o próprio Javascript escolhe o que será usado de acordo com o valor adicionado.
+        -- A conversão de Number para string, podemos colocar 'String(n)'.
+        */
+
+        /* linha para alterar um Number para uma moeda qualquer
+        n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+        */
+
+        /*
+        Operadores aritméticos:         Precedência:
+        '+' = soma                      '()'
+        '-' = subtração                 '**'
+        '*' = mutiplicação              '*', '/', '%'
+        '/' = divisão                   '+', '-'
+        '%' = resto da divisão
+        '**' = potenciação
+        */
+
+        /*
+        'n = n + 4' é igual a 'n += 4'
+        e se segue a mesma lógica para todos os operadores
+        */
+
+        /*
+        Incremento: 'x = x + 1' -> 'x += 1' ->  'x++'
+                                                'x--'
+        */
+
+        /*
+        Operadores Relacionais:
+        '<' = menor que
+        '>' = maior que
+        '<=' = menor ou igual
+        '>=' = maior ou igual
+        '!=' = diferente
+        '==' = igual (mesmo valor podendo ser de tipos diferentes. ex: 5 == '5')
+        '===' = igual (mesmo valor e mesmo tipo)
+        */
+       
+        /*
+        Operadores Lógicos:
+        '!' = negação
+        '&&' = conjunção (um e outro)
+        '||' = disjunção (um ou outro)
+        */
+        
+        /*
+        Operador ternário:
+        '?' = para resultado positivo
+        ':' = para resuldato negativo
+        Ex. média >= 7.0 ? 'Aprovado' : 'Reprovador'
+        */
+
+        /*
+        Ordem de precedência dos operadores:
+        Aritméticos
+        Relacionais
+        negação
+        conjunção
+        disjunção
+        Ternários
+        */
+        
     </script>
 </body>
 </html>
